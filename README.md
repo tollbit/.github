@@ -1,8 +1,8 @@
-## Tollbit
+## TollBit
 
 A managed entrypoint to any web app, specifically meant for AI agents. Direct, authorized, and reliable agent <-> service interactions for any web service on the internet.
 
-## Why Tollbit Exists
+## Why TollBit Exists
 
 It's no secret that AI agents are going to run the web in the near future. However, for that to become a reality, the way agents interact with the internet needs to change. Currently, agent builders' options are limited to typical developer APIs and/or web automation. While great for demos, these patterns seem like the initial "hack" waiting for a more long term solution.
 
@@ -10,15 +10,15 @@ Developer APIs work well, but there is a very short list beyond the overused Goo
 
 The main reason for all this trouble? The web was not built for agents to be first class citzens.
 
-Tollbit aims to build critical infrastructure that opens up new pathways for agents to act on the web, at native speed, and to actually bring real value to their users.
+TollBit aims to build critical infrastructure that opens up new pathways for agents to act on the web, at native speed, and to actually bring real value to their users.
 
 We are building on one ethical principle: **agents shouldn't (need to) pretend to be humans on the internet**.
 
 This approach solves problems for both sides: website owners gain a reliable way to identify legitimate AI agents, manage their access privileges, and monetize their usage, while AI developers get stable, authorized access to first-party APIs, content, or web UI.
 
-## How Tollbit Works
+## How TollBit Works
 
-Tollbit creates a gateway for AI agents through a simple convention:
+TollBit creates a gateway for AI agents through a simple convention:
 
 **Any service with a `tollbit` subdomain (`tollbit.example.com`) explicitly welcomes agent access with standardized authorization, permissions, and monetization.**
 
@@ -27,9 +27,9 @@ We call this subdomain the "front door" - a dedicated entry point built specific
 ```mermaid
 flowchart LR
     %% Define the AI agent client
-    A[AI Agent with<br>Tollbit Client]
+    A[AI Agent with<br>TollBit Client]
 
-    %% Define the Tollbit front doors
+    %% Define the TollBit front doors
     B1[tollbit.service-a.com]
     B2[tollbit.service-b.com]
     B3[tollbit.service-c.com]
@@ -42,7 +42,7 @@ flowchart LR
     %% Define the human user (simple)
     H[Human User]
 
-    %% Connect AI agent to Tollbit front doors
+    %% Connect AI agent to TollBit front doors
     A -->|"HTTP"| B1
     A -->|"HTTP"| B2
     A -->|"HTTP"| B3
@@ -50,17 +50,17 @@ flowchart LR
     %% Connect human to just service-a
     H -->|"Browser"| C1
 
-    %% Connect Tollbit front doors to actual services - no labels
+    %% Connect TollBit front doors to actual services - no labels
     B1 --- C1
     B2 --- C2
     B3 --- C3
 ```
 
-## Tollbit Among the Ecosystem
+## TollBit Among the Ecosystem
 
-Tollbit is intentionally built to improve, not compete with the existing ecosystem. Tollbit is the closest layer to the web service. Other frameworks specify how agents interact and communicate with that layer.
+TollBit is intentionally built to improve, not compete with the existing ecosystem. TollBit is the closest layer to the web service. Other frameworks specify how agents interact and communicate with that layer.
 
-- **Model Context Protocol (MCP)**: All Tollbit services are MCP-compatible, making them plug-and-play with Anthropic's models. Tollbit is the "what", and MCP is the "how" for agents making requests on the web.
+- **Model Context Protocol (MCP)**: All TollBit services are MCP-compatible, making them plug-and-play with Anthropic's models. TollBit is the "what", and MCP is the "how" for agents making requests on the web.
 - **OpenAPI**: Works alongside API specifications while adding agent-specific authentication and monetization
 - **AI Agent Frameworks**: Provides a consistent target for agent tools regardless of underlying architecture
 
@@ -75,7 +75,7 @@ flowchart LR
     %% Define the human user (simple)
     H[Human User]
 
-    %% Define the Tollbit front doors
+    %% Define the TollBit front doors
     B1[tollbit.service-a.com]
     B2[tollbit.service-b.com]
     B3[tollbit.service-c.com]
@@ -90,13 +90,13 @@ flowchart LR
     A -->|"MCP Protocol"| B2
     A -->|"MCP Protocol"| M3
 
-    %% Connect MCP servers to Tollbit front doors
+    %% Connect MCP servers to TollBit front doors
     M3 -->|"HTTP"| B3
 
     %% Connect human to just service-a
     H -->|"Browser"| C1
 
-    %% Connect Tollbit front doors to actual services
+    %% Connect TollBit front doors to actual services
     B1 --- C1
     B2 --- C2
     B3 --- C3
@@ -105,16 +105,16 @@ flowchart LR
 
 ## For Service Providers
 
-Tollbit lets you monetize AI agent access to your service without building custom infrastructure:
+TollBit lets you monetize AI agent access to your service without building custom infrastructure:
 
-- Implement once, work with any Tollbit-compatible agent
+- Implement once, work with any TollBit-compatible agent
 - Set different pricing tiers and usage limits
 - Separate human and bot traffic transparently
 - Prevent abuse through standardized authentication
 
 ## For AI Developers
 
-Tollbit gives your agents reliable access to services:
+TollBit gives your agents reliable access to services:
 
 - One consistent pattern for authentication and access
 - No more brittle web automation that breaks with UI changes
@@ -128,7 +128,7 @@ Start with a sample [Stagehand](https://stagehand.dev) app.
 npx create-browser-app
 ```
 
-Install the Tollbit client with Stagehand Plugin
+Install the TollBit client with Stagehand Plugin
 ```bash
 npm i @tollbit/stagehand
 ```
@@ -155,7 +155,7 @@ other code...
 
 const context = stagehand.context;
 
-// Attach Tollbit to the browser context
+// Attach TollBit to the browser context
 await tollbit.attachToContext(context);
 
 /*

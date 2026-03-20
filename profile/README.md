@@ -1,10 +1,10 @@
-## Tollbit
+## TollBit
 
 A managed entrypoint to any web app, specifically meant for AI agents. Direct, authorized, and reliable agent <-> service interactions for any web service on the internet.
 
-## Why Tollbit Exists
+## Why TollBit Exists
 
-Tollbit aims to build critical infrastructure that opens up new pathways for agents to act on the web, at native speed, and to actually bring real value to their users.
+TollBit aims to build critical infrastructure that opens up new pathways for agents to act on the web, at native speed, and to actually bring real value to their users.
 
 We are building on one ethical principle: **agents shouldn't (need to) pretend to be humans on the internet**.
 
